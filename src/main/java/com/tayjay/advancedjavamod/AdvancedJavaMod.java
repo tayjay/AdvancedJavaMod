@@ -1,10 +1,12 @@
 package com.tayjay.advancedjavamod;
 
+import com.tayjay.advancedjavamod.event.MyEventHandler;
 import com.tayjay.advancedjavamod.init.ModItems;
 import com.tayjay.advancedjavamod.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -51,6 +53,7 @@ public class AdvancedJavaMod
     public void init(FMLInitializationEvent event)
     {
         System.out.println("Init for Advanced Java mod");
+        MinecraftForge.EVENT_BUS.register(new MyEventHandler());
     }
 
     @Mod.EventHandler

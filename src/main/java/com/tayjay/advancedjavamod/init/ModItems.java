@@ -1,6 +1,7 @@
 package com.tayjay.advancedjavamod.init;
 
 import com.tayjay.advancedjavamod.AdvancedJavaMod;
+import com.tayjay.advancedjavamod.item.ItemMySword;
 import com.tayjay.advancedjavamod.item.ItemTest;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -16,10 +17,12 @@ public class ModItems
 {
 
     public static Item testItem;
+    public static Item mySword;
 
     public static void initItems()
     {
         testItem = register(new ItemTest("test_item"));
+        mySword = register(new ItemMySword(Item.ToolMaterial.DIAMOND, "my_sword"));
     }
 
     private static <T extends Item> T register(T item)
